@@ -12,7 +12,7 @@
 #' char_not_fact(pollo)
 #' [1] "that should be character"
 #'
-#' @param vector to be assess
+#' @param vector to be assessed
 #' @return whether it should be character or factor
 #' @export
 
