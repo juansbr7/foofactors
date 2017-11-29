@@ -101,7 +101,7 @@ character or factor compares the lenght of levels with the leght of the factor, 
 Example:
 
 ``` r
-### repeted levels
+### repeated levels
 pollos<- c("gallo", "gallo", "pollito", "gallina", "pollito")
 char_not_fact(pollos)
 #> [1] "it should be a factor"
