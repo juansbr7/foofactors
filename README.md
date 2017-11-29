@@ -1,6 +1,10 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 **NOTE: This is a toy package created for expository purposes. It is not meant to actually be useful. If you want a package for factor handling, please see [forcats](https://cran.r-project.org/package=forcats).**
 
+I'm trying to fix Error: 'rcmd\_safe\_env' is not an exported object from 'namespace:callr'
+
+***Refresher:*** when a character is converted into a factor, levels are ordered by defaul unless specified. Levels are unique categorical values, therefore, if the vector has already unique categorical values, it does not need to be converted into a factor and can remain as character. the two function i wrote will help you assess whether a vector should be character of factor, and to return a vector with unordered levels.
+
 ### foofactors
 
 Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
@@ -69,9 +73,11 @@ freq_out(x)
 #> 5      e    15
 ```
 
-***as is levels***
+### as is levels
 
-as is levels returns a factor with levels in their original order Example:
+as is levels returns a factor with levels in their original order
+
+Example:
 
 ``` r
 ## regular factor
@@ -88,7 +94,9 @@ as_is_levels(pollo)
 #> Levels: rooster chicken hen
 ```
 
-***character or factor*** character or factor compares the lenght of levels with the leght of the factor, if equal, it suggest it should be character, if not, factor.
+### Character or factor
+
+character or factor compares the lenght of levels with the leght of the factor, if equal, it suggest it should be character, if not, factor.
 
 Example:
 
