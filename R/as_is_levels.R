@@ -6,7 +6,7 @@
 #' as_is_levels(pollo)
 #' [1] rooster chicken hen
 #' Levels: rooster chicken hen
-#' @param character to be converte, or factor to be modified
+#' @param character to be converted, or factor to be modified
 #' @return factor with unrodered levels
 #' @export
 as_is_levels<- function (x) {
