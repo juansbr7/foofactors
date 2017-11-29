@@ -77,15 +77,20 @@ freq_out(x)
 
 as is levels returns a factor with levels in their original order
 
-Example:
+Example: ***regular factor ***
 
 ``` r
-## regular factor
+
 pollo <- c("rooster", "chicken", "hen")
 factor(pollo)
 #> [1] rooster chicken hen    
 #> Levels: chicken hen rooster
-## levels as is
+```
+
+***levels as is***
+
+``` r
+
 as_is_levels<- function (x) {
                 factor(x, levels= unique(x))}
   
@@ -98,15 +103,19 @@ as_is_levels(pollo)
 
 character or factor compares the lenght of levels with the leght of the factor, if equal, it suggest it should be character, if not, factor.
 
-Example:
+Example: ***repeated levels***
 
 ``` r
-### repeated levels
+
 pollos<- c("gallo", "gallo", "pollito", "gallina", "pollito")
 char_not_fact(pollos)
 #> [1] "it should be a factor"
+```
 
-### unique levels
+\*\*\* unique levels \*\*\*
+
+``` r
+
 char_not_fact<- function (x) {f<- as_is_levels(x)
 if (length(f)== length(unique(levels(f)))) {
   return("that should be character")}
