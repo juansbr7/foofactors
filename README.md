@@ -59,7 +59,7 @@ The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 
 ``` r
 freq_out(x)
-#> # A tibble: 5 × 2
+#> # A tibble: 5 x 2
 #>        x     n
 #>   <fctr> <int>
 #> 1      a    25
@@ -67,4 +67,46 @@ freq_out(x)
 #> 3      c    17
 #> 4      d    17
 #> 5      e    15
+```
+
+***as is levels***
+
+as is levels returns a factor with levels in their original order Example:
+
+``` r
+## regular factor
+pollo <- c("rooster", "chicken", "hen")
+factor(pollo)
+#> [1] rooster chicken hen    
+#> Levels: chicken hen rooster
+## levels as is
+as_is_levels<- function (x) {
+                factor(x, levels= unique(x))}
+  
+as_is_levels(pollo)
+#> [1] rooster chicken hen    
+#> Levels: rooster chicken hen
+```
+
+***character or factor*** character or factor compares the lenght of levels with the leght of the factor, if equal, it suggest it should be character, if not, factor.
+
+Example:
+
+``` r
+### repeted levels
+pollos<- c("gallo", "gallo", "pollito", "gallina", "pollito")
+char_not_fact(pollos)
+#> [1] "it should be a factor"
+
+### unique levels
+char_not_fact<- function (x) {f<- as_is_levels(x)
+if (length(f)== length(unique(levels(f)))) {
+  return("that should be character")}
+
+else {return("it should be a factor")
+}
+}
+pollo <- c("rooster", "chicken", "hen")
+char_not_fact(pollo)
+#> [1] "that should be character"
 ```
