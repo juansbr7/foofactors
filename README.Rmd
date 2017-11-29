@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 **NOTE: This is a toy package created for expository purposes. It is not meant to actually be useful. If you want a package for factor handling, please see [forcats](https://cran.r-project.org/package=forcats).**
 
+
+I'm trying to fix Error: 'rcmd_safe_env' is not an exported object from 'namespace:callr'
 ### foofactors
 
 Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
